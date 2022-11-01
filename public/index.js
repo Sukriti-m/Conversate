@@ -3,7 +3,7 @@ const chatMessages=document.querySelector('.chat-messsages');
 const roomName=document.getElementById('room-name');
 const userList=document.getElementById('users');
 
-const socket=io();
+const socket=io('ws://localhost:3000', {transports: ['websocket']});
 
 const {username,room}=Qs.parse(location.search,{
     ignoreQueryPrefix:true
